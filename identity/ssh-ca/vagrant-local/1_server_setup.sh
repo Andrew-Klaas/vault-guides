@@ -91,7 +91,6 @@ POLICY=$(base64 ssh-username-restrict.sentinel); vault write sys/policies/egp/ss
         enforcement_level="hard-mandatory"
 
 sudo adduser johnsmith
-#sshd_config AllowUsers johnsmith
 sudo mkdir /home/johnsmith/.ssh
 sudo chown -R johnsmith:johnsmith /home/johnsmith/.ssh
 sudo chmod 0700 /home/johnsmith/.ssh
