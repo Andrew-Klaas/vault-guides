@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
+set -v
 
 # Authenticate to Vault
 vault login password
 
 vault audit enable file file_path=/vagrant/vault_audit.log
-
-# Mount a backend's instance for signing host keys
-vault secrets enable -path ssh-host-signer ssh
 
 # Mount a backend's instance for signing client keys
 vault secrets enable -path ssh-client-signer ssh
