@@ -16,7 +16,7 @@ resource "aws_instance" "bastion" {
   subnet_id         = "${module.vpc.public_subnets[0]}"
   key_name          = "${aws_key_pair.aws.key_name}"
   associate_public_ip_address = true
-  ebs_optimized               = false
+  ebs_optimized               = true
   iam_instance_profile        = "${aws_iam_instance_profile.benchmark.id}"
 
   vpc_security_group_ids  = [

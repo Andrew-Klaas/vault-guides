@@ -28,7 +28,7 @@ resource "aws_subnet" "public_subnet" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = var.vpc_cidr
   availability_zone       = var.aws_zone
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = false
 
   tags = {
     Name = "vault-kms-unseal-${random_pet.env.id}"
