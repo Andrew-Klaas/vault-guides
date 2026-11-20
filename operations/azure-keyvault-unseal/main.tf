@@ -51,7 +51,7 @@ resource "azurerm_key_vault" "vault" {
   }
 
   network_acls {
-    default_action = "Allow"
+    default_action = "Deny"
     bypass         = "AzureServices"
   }
 }
@@ -186,7 +186,7 @@ resource "azurerm_storage_account" "tf_storageaccount" {
   resource_group_name      = "${azurerm_resource_group.vault.name}"
   location                 = "${var.location}"
   account_tier             = "Standard"
-  account_replication_type = "LRS"
+  account_replication_type = "GRS"
 
   tags = {
     environment = "${var.environment}-${random_id.keyvault.hex}"

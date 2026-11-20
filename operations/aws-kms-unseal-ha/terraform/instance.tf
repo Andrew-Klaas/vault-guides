@@ -34,7 +34,7 @@ resource "aws_instance" "vault" {
   ]
 
   associate_public_ip_address = true
-  ebs_optimized               = false
+  ebs_optimized               = true
   iam_instance_profile        = "${aws_iam_instance_profile.vault-kms-unseal.id}"
 
   tags {
